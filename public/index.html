@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Chat Web</title>
+</head>
+<body>
+<div id="container">
+    <div class="window-inside" id="windowContainer">
+        <div class="chat-start">Start your conversation now!</div>
+    </div>
+</div>
+<div class="chat-login noselect" id="chatLogin">
+    <b>Please, enter your user name</b>
+    <form id="join" action="">
+        <input maxlength="32" placeholder="username" id="chatName"/>
+        <button type="submit">Join</button>
+    </form>
+</div>
+<form id="sends" action="">
+    <input class="chat-input" maxlength="128" id="chatMessage" placeholder="type something"/>
+</form>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/script/main.js"></script>
+</body>
+</html>

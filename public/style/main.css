@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --background: #1a1e1f;
+    --background-more: rgba(26,30,31,.5);
+    --detail: #252b30;
+    --detail-more: #303437;
+    --detail-color: #2176ff;
+    --font-color: white;
+    --font-size: 14px;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+    outline: none;
+    font-size: var(--font-size);
+}
+
+* {
+    scrollbar-width: 0;
+}
+
+*::-webkit-scrollbar {
+    width: 0;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    border-radius: 5px;
+    background: var(--background);
+}
+
+#container {
+    z-index: -1;
+    position: relative;
+    width: 100vw;
+    border-radius: 5px;
+    color: white;
+    padding: 40px 10px;
+}
+
+.noselect, .chat-join, .chat-start {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.chat-start {
+    width: 100%;
+    text-align: center;
+    color: var(--detail-more);
+    font-weight: bolder;
+    margin-bottom: 20px;
+}
+
+.chat-join {
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    color: var(--detail-more);
+    margin-bottom: 20px;
+}
+
+.chat-login > span {
+    font-weight: bolder;
+}
+
+.chat-input {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: calc(100% - 10px);
+    padding: 14px 18px;
+    font-size: var(--font-size);
+    margin: 5px;
+    color: var(--font-color);
+    background: var(--detail);
+    border: none;
+    transition: .2s;
+}
+
+#sends {
+    z-index: 1;
+}
+
+.chat-input:hover, .chat-input:focus, .chat-login > form > input:hover, .chat-login > form > input:focus, .chat-login > form > button:hover, .chat-login > form > button:focus {
+    opacity: .9;
+}
+
+.chat-bubble-wrap {
+    width: 100%;
+}
+
+.chat-bubble-in {
+    max-width: 100%;
+    word-wrap: break-word;
+    float: left;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px 10px 10px 0;
+    background: var(--detail-more);
+    margin-bottom: 30px;
+}
+
+.chat-bubble-in::after {
+    content: '';
+    position: absolute;
+    border-top: 5px solid var(--detail-more);
+    border-right: 5px solid var(--detail-more);
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid transparent;
+    bottom: -10px;
+    left: 0;
+}
+
+.chat-bubble-out {
+    max-width: 100%;
+    word-wrap: break-word;
+    text-align: right;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px 10px 0 10px;
+    background: var(--detail-color);
+    margin-bottom: 30px;
+    float: right;
+}
+
+.chat-bubble-out::after {
+    content: '';
+    position: absolute;
+    border-top: 5px solid var(--detail-color);
+    border-left: 5px solid var(--detail-color);
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid transparent;
+    bottom: -10px;
+    right: 0;
+}
+
+.chat-username {
+    font-weight: bolder;
+}
+
+.chat-username::after {
+    content: ': ';
+}
+
+.chat-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: calc(100vh);
+    background: var(--background-more);
+    backdrop-filter: blur(3px);
+    transition: .2s;
+    color: var(--font-color);
+}
+
+.chat-login > form > input {
+    background: var(--detail-more);
+    margin: 20px auto;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    border: 0;
+    border-radius: 5px;
+    padding: 10px;
+    transition: .2s;
+}
+
+.chat-login > form > input::after {
+    content: 's';
+}
+
+.chat-login > form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.chat-login > form > button {
+    background: var(--detail-color);
+    padding: 8px 40px;
+    border-radius: 5px;
+    border: none;
+    color: var(--font-color);
+    cursor: pointer;
+    transition: .2s;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    color: var(--font-color);
+    cursor: pointer;
+}
