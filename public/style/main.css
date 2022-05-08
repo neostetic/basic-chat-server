@@ -40,7 +40,7 @@ body {
     width: 100vw;
     border-radius: 5px;
     color: white;
-    padding: 40px 10px;
+    padding: 40px 0;
 }
 
 .noselect, .chat-join, .chat-start {
@@ -50,6 +50,51 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+.window-bar {
+    z-index: 1;
+    position: fixed;
+    background: var(--background-more);
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.window-bar > .dragger {
+    width: calc(100% - 100px);
+    height: 40px;
+    float: right;
+    -webkit-app-region: drag;
+}
+
+.window-bar-buttons {
+    width: 100px;
+    padding: 12px;
+}
+
+.window-bar-button {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background: var(--detail-more);
+    float: left;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.window-bar-button:hover {
+    opacity: .7;
+}
+
+.window-inside {
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
 }
 
 .chat-start {
@@ -157,11 +202,11 @@ body {
     justify-content: center;
     flex-direction: column;
     z-index: 2;
-    top: 0;
+    top: 50px;
     left: 0;
     position: fixed;
     width: 100%;
-    height: calc(100vh);
+    height: calc(100vh - 50px);
     background: var(--background-more);
     backdrop-filter: blur(3px);
     transition: .2s;
